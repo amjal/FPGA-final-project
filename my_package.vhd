@@ -13,8 +13,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 package my_package is
 	signal p, n, m: integer;
 	type matrix is array (positive range <>, positive range <>) of signed;
-	signal B: matrix:= matrix(p,p);
+	signal B: matrix:=matrix(p,p);
+	function concatenator (A11: matrix; A12: matrix; A21: matrix) return matrix;
 end my_package;
 
 package body my_package is 
+	function concatenator (A11: matrix; A12: matrix; A21: matrix) return matrix is
+		variable A : matrix := matrix(p,p);
+	begin
+		A(0 to n)(0 to n) := A11;
+		A(n to p)(0 to n) := A12;
+		A(0 to n)(n to p) := A21;
+		A := (others =>(others=>'0'));
+		return A;
+	end concatenator;
 end package body;
