@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="module4_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="module4_tb" />
+            <top_module name="my_package" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="72fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/module4_tb/G_out" type="array">
+      <obj_property name="ElementShortName">G_out[1:7,1:7][15:0]</obj_property>
+      <obj_property name="ObjectShortName">G_out[1:7,1:7][15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/module4_tb/A11" type="array">
+      <obj_property name="ElementShortName">A11[1:4,1:4][15:0]</obj_property>
+      <obj_property name="ObjectShortName">A11[1:4,1:4][15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/module4_tb/X" type="array">
+      <obj_property name="ElementShortName">X[1:7,1:1][15:0]</obj_property>
+      <obj_property name="ObjectShortName">X[1:7,1:1][15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/module4_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+</wave_config>

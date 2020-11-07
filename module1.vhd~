@@ -1,0 +1,59 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 07/19/2020 04:01:39 PM
+-- Design Name: 
+-- Module Name: module1 - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use my_package.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity module1 is
+	generic(w: integer;
+		   n: integer;
+	   	   m: integer;
+	   	   p: integer);
+    Port (A11:in matrix(n,n);
+		  X: in matrix(p,1);
+	  	  F: out matrix(p,1));
+end module1;
+
+architecture Behavioral of module1 is
+	signal A: matrix;
+begin
+	A <= concatenator (A11, A12, A21);
+	process
+		variable AX: matrix := matrix(p,1);
+	begin
+		AX := (others =>(others =>'0'));
+		for i in 0 to p loop
+			for j in 0 to p loop
+				AX(i)(0) <= Ax(i)(0) + A(i)(j)*X(j)(0);
+			end loop;
+		end loop;
+	end process;
+end Behavioral;

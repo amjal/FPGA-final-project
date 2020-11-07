@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+package my_package is
+	signal L,R : integer;
+	signal p, n, m: integer;
+	type matrix is array (positive range <>, positive range <>) of signed;
+	signal A12 : matrix := matrix(n,m);
+	signal A21 : matrix := matrix(m,n);
+	signal B: matrix:=matrix(p,1);
+	function concatenator (A11: matrix; A12: matrix; A21: matrix) return matrix;
+end my_package;
+
+package body my_package is 
+	function concatenator (A11: matrix; A12: matrix; A21: matrix) return matrix is
+		variable A : matrix := matrix(p,p);
+	begin
+		A(0 to n)(0 to n) := A11;
+		A(n to p)(0 to n) := A12;
+		A(0 to n)(n to p) := A21;
+		A := (others =>(others=>'0'));
+		-- A := ((0 to n) => ((0 to n) => A11), others =>(others => '0'));
+		return A;
+	end concatenator;
+end package body;

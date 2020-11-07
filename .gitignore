@@ -1,4 +1,1 @@
-*
-!**/**/*.vhd
-!.gitignore
-!*.dat
+phase01.sim
