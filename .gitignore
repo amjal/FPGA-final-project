@@ -1,4 +1,4 @@
 *
-!*.vhd
-!.gitignore
 !**/*.vhd
+!.gitignore
+!*.dat
